@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :movies
-  resources :genres
+  resources :movies, only: [:index, :update, :destroy]
+  resources :genres, only: [:index, :update, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
