@@ -19,9 +19,9 @@ class GenresContainer extends Component {
 
 const mapStateToProps = state => ({ genres: state.genres })
 
-const mapDispatchToProps = dispatch => ({
-  addGenre: text => dispatch({type: 'ADD_GENRE', name}),
-  deleteGenre: id => dispatch({type: 'DELETE_GENRE', id})
-})
+//const mapDispatchToProps = dispatch => ({
+  //addGenre: name => dispatch({type: 'ADD_GENRE', name}),
+  //deleteGenre: id => dispatch({type: 'DELETE_GENRE', id})
+//})
 
-export default connect(mapStateToProps, mapDispatchToProps)(GenresContainer)
+export default connect(mapStateToProps)(GenresContainer)
