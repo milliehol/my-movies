@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GenresInput from '../components/genres/GenresInput'
+import GenresInput from '../components/genres/GenreInput'
 import Genres from '../components/genres/Genres'
 import { connect } from 'react-redux'
 

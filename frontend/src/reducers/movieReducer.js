@@ -6,7 +6,7 @@ function movieReducer(state = [], action)
         case LOAD_MOVIES:
             return action.movies;
 
-        case ADD_MOVIE:
+        case CREATE_MOVIE:
             return [
                 ...state,
                 {

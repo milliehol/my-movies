@@ -2,19 +2,19 @@ import * as types from './actionTypes';
 import moviesApi from '../api/moviesApi';
 
 export function loadMoviesSuccess(movies) {
-  return {type: types.LOAD_MOVIES_SUCCESS, movies};
+  return {type: types.LOAD_MOVIES, movies};
 }
 
 export function updateMovieSuccess(movie) {
-  return {type: types.UPDATE_MOVIE_SUCCESS, movie}
+  return {type: types.UPDATE_MOVIE, movie}
 }
 
 export function createMovieSuccess(movie) {
-  return {type: types.CREATE_MOVIE_SUCCESS, movie}
+  return {type: types.CREATE_MOVIE, movie}
 }
 
 export function deleteMovieSuccess(movie) {
-  return {type: types.DELETE_MOVIE_SUCCESS, movie}
+  return {type: types.DELETE_MOVIE, movie}
 }
 
 export function loadMovies() {
