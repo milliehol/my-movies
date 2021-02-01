@@ -1,4 +1,4 @@
-import { LOAD_MOVIES, ADD_MOVIE, DELETE_MOVIE } from '../actions/actionTypes'
+import { LOAD_MOVIES, CREATE_MOVIE, DELETE_MOVIE } from '../actions/actionTypes'
 
 function movieReducer(state = [], action)
 {

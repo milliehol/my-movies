@@ -25,9 +25,9 @@ const mapStateToProps = ({movies}) => {
   return {movies}
 }
 
-//const mapDispatchToProps = dispatch => ({
-//  addMovie: movie => dispatch({type: 'ADD_MOVIE', title}),
-//  deleteMovie: id => dispatch({type: 'DELETE_MOVIE', id})
-//})
+const mapDispatchToProps = dispatch => ({
+  addMovie: movie => dispatch({type: 'ADD_MOVIE', title}),
+  deleteMovie: id => dispatch({type: 'DELETE_MOVIE', id})
+})
 
-export default connect(mapStateToProps)(MoviesContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesContainer)

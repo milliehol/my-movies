@@ -7,7 +7,7 @@ class GenresContainer extends Component {
   render() {
     return (
       <div>
-        <GenreInput addGenre={this.props.addGenre}/>
+        <GenresInput addGenre={this.props.addGenre}/>
         <Genres
           genres={this.props.genres}
           deleteGenre={this.props.deleteGenre}
@@ -19,9 +19,9 @@ class GenresContainer extends Component {
 
 const mapStateToProps = state => ({ genres: state.genres })
 
-//const mapDispatchToProps = dispatch => ({
-  //addGenre: name => dispatch({type: 'ADD_GENRE', name}),
-  //deleteGenre: id => dispatch({type: 'DELETE_GENRE', id})
-//})
+const mapDispatchToProps = dispatch => ({
+  addGenre: name => dispatch({type: 'ADD_GENRE', name}),
+  deleteGenre: id => dispatch({type: 'DELETE_GENRE', id})
+})
 
 export default connect(mapStateToProps)(GenresContainer)
