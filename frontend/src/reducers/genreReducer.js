@@ -6,7 +6,7 @@ function genreReducer(state = [], action)
         case LOAD_GENRES:
             return action.genres;
 
-        case ADD_GENRE:
+        case CREATE_GENRE:
             return [
                 ...state,
                 {
