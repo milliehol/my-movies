@@ -1,12 +1,12 @@
-class moviesApi {
+class genresApi {
 
   //static requestHeaders() {
   //  return {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
 //  }
 
-  static getAllMoves() {
+  static getAllGenres() {
     //const headers = this.requestHeaders();
-    const request = new Request(`http://localhost:3000/movies`, {
+    const request = new Request(`http://localhost:3000/genres`, {
       method: 'GET',
       //headers: headers
     });
@@ -18,12 +18,12 @@ class moviesApi {
     });
   }
 
-  static updateMovie(movie) {
+  static updateGenre(genre) {
     //const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-    const request = new Request(`http://localhost:3000/movies/${movie.id}`, {
+    const request = new Request(`http://localhost:3000/genres/${genre.id}`, {
       method: 'PUT',
       //headers: headers,
-      body: JSON.stringify({movie: movie})
+      body: JSON.stringify({genre: genre})
     });
 
 
@@ -34,12 +34,12 @@ class moviesApi {
     });
   }
 
-  static createMovie(movie) {
+  static createGenre(genre) {
   //  const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-    const request = new Request(`http://localhost:3000/movies`, {
+    const request = new Request(`http://localhost:3000/genres`, {
       method: 'POST',
     //  headers: headers,
-      body: JSON.stringify({movie: movie})
+      body: JSON.stringify({genre: genre})
     });
 
 
@@ -50,9 +50,9 @@ class moviesApi {
     });
   }
 
-  static deleteMovie(movie) {
+  static deleteGenre(genre) {
     //const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-    const request = new Request(`http://localhost:3000/movies/${movie.id}`, {
+    const request = new Request(`http://localhost:3000/genres/${genre.id}`, {
       method: 'DELETE',
       headers: headers
     });
@@ -65,4 +65,4 @@ class moviesApi {
   }
 }
 
-export default moviesApi;
+export default genresApi;
