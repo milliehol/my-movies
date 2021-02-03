@@ -8,7 +8,7 @@ class Genres extends Component {
       }
 
       render() {
-          const todos = this.props.genres;
+          const genres = this.props.genres;
           return(
               <div className="listWrapper">
                   <ul className="genreList">

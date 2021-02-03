@@ -8,8 +8,7 @@ class Genre extends Component {
       }
 
 
-
-      deleteGenre = (id) => {
+     deleteGenre = (id) => {
           this.props.deleteGenre(id)
       }
 
