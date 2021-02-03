@@ -1,42 +1,33 @@
 import React, { Component } from 'react';
 
+
 class GenreInput extends Component {
 
+
   constructor(props) {
-    super(props);
+  		super(props);
+      }
 
-    this.state = {
-      name: ''
-    };
-  };
+      addGenre = (e) => {
+          if (e.key === 'Enter' && !(this.getName.value === '')) {
+              this.props.addGenre(this.getName.value)
+              this.getName.value = '';
+          }
+      }
 
-  handleOnChange(event) {
-    this.setState({
-      name: event.target.value,
-    });
+      render() {
+          return(
+              <div>
+                  <div className="header">
+                      <h1>Genre List</h1>
+                  </div>
+                  <div className="inputContainer">
+                      <input className="genreInput" type="text" placeholder="Add a Genre" maxLength="50"
+                      onKeyPress={this.addGenre} ref={(input)=>this.getName = input} />
+                  </div>
+              </div>
+          );
+      }
   }
-
-  handleOnSubmit(event) {
-    event.preventDefault();
-    this.props.addGenre(this.state.name)
-    this.setState({
-      name: ''
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)} >
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" />
-        </form>
-      </div>
-    );
-  }
-};
 
 export default GenreInput;

@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import GenresContainer from '../../containers/GenresContainer'
 
 
 class Genre extends Component {
 
-  handleOnClick() {
-    this.props.deleteGenre(this.props.genre.id);
-  }
+  constructor(props) {
+  		super(props);
+      }
 
-  render() {
-    const { genre } = this.props;
 
-    return (
-      <div>
-        <li>
-          {genre.name}
-          <button onClick={() => this.handleOnClick()}> X </button>
-          <GenresContainer genre={genre}/>
-        </li>
-      </div>
-    );
+
+      deleteGenre = (id) => {
+          this.props.deleteGenre(id)
+      }
+
+      render() {
+          const todo = this.props.genre;
+          return(
+              <li className="genre" key={genre.id} id={genre.id}>
+                  <label className="genreLabel">{genre.name}</label>
+                  <span className="deleteGenreBtn" onClick={(e) => this.deleteGenre(genre.id)}>
+                  x
+                  </span>
+              </li>
+          );
+      }
   }
-};
 
 export default Genre;

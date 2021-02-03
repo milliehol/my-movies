@@ -5,10 +5,36 @@ import { connect } from 'react-redux'
 import { loadGenre, addGenre, updateGenre, deleteGenre } from '../actions/Genres'
 
 class GenresContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: ''
+    };
+  };
 
   componentDidMount() {
   this.props.addGenre()
 }
+
+handleOnClick() {
+  this.props.deleteGenre(this.props.genre.id);
+}
+
+handleOnChange(event) {
+  this.setState({
+    name: event.target.value,
+  });
+}
+
+handleOnSubmit(event) {
+  event.preventDefault();
+  this.props.addGenre(this.state.name)
+  this.setState({
+    name: ''
+  });
+}
+
 
   render() {
     return (

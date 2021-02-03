@@ -3,24 +3,25 @@ import Genre from './Genre';
 
 class Genres extends Component {
 
-  render() {
-    const { genres, deleteGenre } = this.props;
-    const genreList = genres.map(genre => {
-      return (
-        <Genre
-            key={genre.id}
-            genre={genre}
-            deleteGenre={deleteGenre}
-        />
-      )
-    });
+  constructor(props) {
+  		super(props);
+      }
 
-    return(
-      <ul>
-        {genreList}
-      </ul>
-    );
-  }
-};
+      render() {
+          const todos = this.props.genres;
+          return(
+              <div className="listWrapper">
+                  <ul className="genreList">
+                  {genres.map((genre) => {
+                      return (
+                          <GenreItem genre={genre} key={genre.id} id={genre.id}
+                              deleteGenre={this.props.deleteGenre} />
+                      )
+                  })}
+                  </ul>
+              </div>
+          );
+      }
+  };
 
 export default Genres;

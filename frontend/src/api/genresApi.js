@@ -51,7 +51,7 @@ class genresApi {
   }
 
   static deleteGenre(genre) {
-    //const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
     const request = new Request(`http://localhost:3000/genres/${genre.id}`, {
       method: 'DELETE',
       headers: headers
