@@ -8,9 +8,7 @@ class GenresContainer extends Component {
 
 
   componentDidMount() {
-  this.loadGenres();
-  this.addGenre();
-  this.deleteGenre()
+this.props.fetchGenres()
 }
 
 
@@ -19,22 +17,19 @@ class GenresContainer extends Component {
     return (
       <div>
         <GenresInput addGenre={this.addGenre}/>
-        <Genres
-          genres={this.loadGenres}
-          deleteGenre={this.deleteGenre}
-        />
-      </div>
+        </div>
+      //  <Genres
+        //  genres={this.loadGenres}
+      //    deleteGenre={this.deleteGenre}
+      //  />
+
     );
   }
 }
 
-const mapStateToProps = state => ({ genres: state.genres })
-
-const mapDispatchToProps = dispatch => ({
-  loadGenres: name => dispatch({type: 'LOAD_GENRES_SUCCESS', name}),
-  addGenre: name => dispatch({type: 'ADD_GENRE_SUCCESS', name}),
-  deleteGenre: id => dispatch({type: 'DELETE_GENRE_SUCCESS', id})
-})
+const mapStateToProps = state => ({ genres: state.genres, genre: state.genre })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(GenresContainer)
+
+
+export default connect(mapStateToProps, {fetchAccounts})(GenresContainer)

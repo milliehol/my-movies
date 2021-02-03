@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 
-class Genre extends Component {
+
+class GenreItem extends Component {
 
   constructor(props) {
   		super(props);
@@ -25,4 +26,4 @@ class Genre extends Component {
       }
   };
 
-export default Genre;
+export default GenreItem;

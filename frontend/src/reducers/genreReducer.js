@@ -11,7 +11,7 @@ function genreReducer(state = [], action)
                 ...state,
                 {
                     id: action.id,
-                    title: action.title,
+                    name: action.name,
                     done: false
                 }
             ];

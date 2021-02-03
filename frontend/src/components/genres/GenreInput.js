@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+
 
 
 class GenreInput extends Component {
@@ -9,23 +10,23 @@ class GenreInput extends Component {
       }
 
       addGenre = (e) => {
-          if (e.key === 'Enter' && !(this.getName.value === '')) {
-              this.props.addGenre(this.getName.value)
-              this.getName.value = '';
+          if (e.key === 'Enter' && !(this.getTitle.value === '')) {
+              this.props.addGenre(this.getTitle.value)
+              this.getTitle.value = '';
           }
       }
 
       render() {
           return(
-              <div>
+              <center><div>
                   <div className="header">
                       <h1>Genre List</h1>
                   </div>
                   <div className="inputContainer">
                       <input className="genreInput" type="text" placeholder="Add a Genre" maxLength="50"
-                      onKeyPress={this.addGenre} ref={(input)=>this.getName = input} />
+                      onKeyPress={this.addGenre} ref={(input)=>this.getTitle = input} />
                   </div>
-              </div>
+              </div></center>
           );
       }
   }
