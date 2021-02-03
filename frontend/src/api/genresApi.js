@@ -34,7 +34,7 @@ class genresApi {
     });
   }
 
-  static createGenre(genre) {
+  static addGenre(genre) {
   //  const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
     const request = new Request(`http://localhost:3000/genres`, {
       method: 'POST',

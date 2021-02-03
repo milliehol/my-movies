@@ -1,12 +1,12 @@
-import { LOAD_GENRES, ADD_GENRE, DELETE_GENRE } from '../actions/actionTypes'
+import { LOAD_GENRES_SUCCESS, ADD_GENRE_SUCCESS, DELETE_GENRE_SUCCESS } from '../actions/actionTypes'
 
 function genreReducer(state = [], action)
 {
     switch(action.type) {
-        case LOAD_GENRES:
+        case LOAD_GENRES_SUCCESS:
             return action.genres;
 
-        case ADD_GENRE:
+        case ADD_GENRE_SUCCESS:
             return [
                 ...state,
                 {
@@ -17,7 +17,7 @@ function genreReducer(state = [], action)
             ];
 
 
-        case DELETE_GENRE:
+        case DELETE_GENRE_SUCCESS:
             return state.filter(genre => genre.id !== action.index);
 
         default:

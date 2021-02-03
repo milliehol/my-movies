@@ -2,19 +2,19 @@ import * as types from './actionTypes';
 import genresApi from '../api/genresApi';
 
 export function loadGenresSuccess(genres) {
-  return {type: types.LOAD_GENRES, genres};
+  return {type: types.LOAD_GENRES_SUCCESS, genres};
 }
 
 export function updateGenreSuccess(genre) {
-  return {type: types.UPDATE_GENRE, genre}
+  return {type: types.UPDATE_GENRE_SUCCESS, genre}
 }
 
 export function createGenreSuccess(genre) {
-  return {type: types.ADD_GENRE, genre}
+  return {type: types.ADD_GENRE_SUCCESS, genre}
 }
 
 export function deleteGenreSuccess(genre) {
-  return {type: types.DELETE_GENRE, genre}
+  return {type: types.DELETE_GENRE_SUCCESS, genre}
 }
 
 export function loadGENRES() {
