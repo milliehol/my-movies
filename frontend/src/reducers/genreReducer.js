@@ -1,4 +1,4 @@
-import { LOAD_GENRES, CREATE_GENRE, DELETE_GENRE } from '../actions/actionTypes'
+import { LOAD_GENRES, ADD_GENRE, DELETE_GENRE } from '../actions/actionTypes'
 
 function genreReducer(state = [], action)
 {
@@ -6,7 +6,7 @@ function genreReducer(state = [], action)
         case LOAD_GENRES:
             return action.genres;
 
-        case CREATE_GENRE:
+        case ADD_GENRE:
             return [
                 ...state,
                 {

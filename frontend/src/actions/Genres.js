@@ -30,7 +30,7 @@ export function loadGENRES() {
 
 export function updateGenre(genre) {
   return function (dispatch) {
-    return genreApi.updateGenre(genre).then(responseGenre => {
+    return genresApi.updateGenre(genre).then(responseGenre => {
       dispatch(updateGenreSuccess(responseGenre));
     }).catch(error => {
       throw(error);
@@ -40,7 +40,7 @@ export function updateGenre(genre) {
 
 export function addGenre(genre) {
   return function (dispatch) {
-    return genreApi.createGenre(genre).then(responseGenre => {
+    return genresApi.createGenre(genre).then(responseGenre => {
       dispatch(createGenreSuccess(responseGenre));
       return responseGenre;
     }).catch(error => {
@@ -51,7 +51,7 @@ export function addGenre(genre) {
 
 export function deleteGenre(genre) {
   return function(dispatch) {
-    return genreApi.deleteGenre(genre).then(() => {
+    return genresApi.deleteGenre(genre).then(() => {
       console.log(`Deleted ${genre.id}`)
       dispatch(deleteGenreSuccess(genre));
       return;
