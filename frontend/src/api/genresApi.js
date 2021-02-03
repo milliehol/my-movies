@@ -5,10 +5,10 @@ class genresApi {
 //  }
 
   static getAllGenres() {
-    //const headers = this.requestHeaders();
+    const headers = this.requestHeaders();
     const request = new Request(`http://localhost:3000/genres`, {
       method: 'GET',
-      //headers: headers
+      headers: headers
     });
 
     return fetch(request).then(response => {
@@ -35,10 +35,10 @@ class genresApi {
   }
 
   static addGenre(genre) {
-  //  const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
     const request = new Request(`http://localhost:3000/genres`, {
       method: 'POST',
-    //  headers: headers,
+     headers: headers,
       body: JSON.stringify({genre: genre})
     });
 

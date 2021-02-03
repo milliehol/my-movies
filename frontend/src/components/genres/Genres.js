@@ -14,7 +14,7 @@ class Genres extends Component {
                   <ul className="genreList">
                   {genres.map((genre) => {
                       return (
-                          <GenreItem genre={genre} key={genre.id} id={genre.id}
+                          <Genre genre={genre} key={genre.id} id={genre.id}
                               deleteGenre={this.props.deleteGenre} />
                       )
                   })}

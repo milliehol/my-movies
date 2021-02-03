@@ -17,7 +17,7 @@ export function deleteGenreSuccess(genre) {
   return {type: types.DELETE_GENRE_SUCCESS, genre}
 }
 
-export function loadGENRES() {
+export function loadGenres() {
   // make async call to api, handle promise, dispatch action when promise is resolved
   return function(dispatch) {
     return genresApi.getAllGenres().then(genres => {

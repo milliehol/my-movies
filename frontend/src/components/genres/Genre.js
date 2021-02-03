@@ -13,7 +13,7 @@ class Genre extends Component {
       }
 
       render() {
-          const todo = this.props.genre;
+          const genre = this.props.genre;
           return(
               <li className="genre" key={genre.id} id={genre.id}>
                   <label className="genreLabel">{genre.name}</label>
@@ -23,6 +23,6 @@ class Genre extends Component {
               </li>
           );
       }
-  }
+  };
 
 export default Genre;
