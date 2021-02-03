@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GenresInput from '../components/genres/GenreInput'
 import Genres from '../components/genres/Genres'
 import { connect } from 'react-redux'
+import { LOAD_GENRES, ADD_GENRE, DELETE_GENRE } from '../actions/actionTypes'
 
 class GenresContainer extends Component {
   render() {

@@ -10,7 +10,7 @@ export function updateGenreSuccess(genre) {
 }
 
 export function createGenreSuccess(genre) {
-  return {type: types.CREATE_GENRE, genre}
+  return {type: types.ADD_GENRE, genre}
 }
 
 export function deleteGenreSuccess(genre) {
@@ -38,7 +38,7 @@ export function updateGenre(genre) {
   };
 }
 
-export function createGenre(genre) {
+export function addGenre(genre) {
   return function (dispatch) {
     return genreApi.createGenre(genre).then(responseGenre => {
       dispatch(createGenreSuccess(responseGenre));
