@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-
+import {Redirect} from 'react-router-dom'
+import GenreEdit from './GenreEdit'
 
 
 
@@ -15,11 +16,11 @@ import React, { Component, PropTypes } from 'react';
 
       <div>
         <h2>
-          {genre.name}
+          {genre ? genre.name : null}
         </h2>
 
         <h4>Edit Genre</h4>
-      
+         <GenreEdit genre={genre.id}/>
       </div>
     )
 

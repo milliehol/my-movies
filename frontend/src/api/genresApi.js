@@ -19,10 +19,10 @@ class genresApi {
   }
 
   static updateGenre(genre) {
-    //const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-    const request = new Request(`http://localhost:3000/genres/${genre.id}`, {
+    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+    const request = new Request(`http://localhost:3000/api/v1/genres/${genre.id}`, {
       method: 'PUT',
-      //headers: headers,
+      headers: headers,
       body: JSON.stringify({genre: genre})
     });
 

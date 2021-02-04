@@ -32,7 +32,7 @@ render() {
 }
 
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
   return {
     genres: state.genres
   }
@@ -41,4 +41,4 @@ const mapDispatchToProps = state => {
 
 
 
-export default connect(mapDispatchToProps, {fetchGenres})(GenresContainer)
+export default connect(mapStateToProps, {fetchGenres})(GenresContainer)

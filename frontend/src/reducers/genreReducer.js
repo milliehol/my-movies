@@ -9,6 +9,12 @@ export default function genreReducer(state = {genres: []}, action)
             case 'ADD_GENRE':
            return {...state, genres: [...state.genres, action.name]}
 
+           case 'EDIT_GENRE':
+          return [
+            ...state.filter(genre => genre.id !== action.genre.id),
+            Object.assign({}, action.genre)
+          ]
+
 
 
         default:

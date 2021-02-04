@@ -7,6 +7,7 @@ const NavBar = (props) => {
   <center>  <div>
       <Link to='/genres' style={{paddingRight: '10px'}}>Genres  </Link>
       <Link to='/genres/new'> Add Genre</Link>
+      
 
     </div> </center>
 
