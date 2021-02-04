@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import GenresInput from '../components/genres/GenreInput'
 import Genres from '../components/genres/Genres'
 import { connect } from 'react-redux'
-import { loadGenres, addGenre, deleteGenre } from '../actions/Genres'
+import { fetchGenres } from '../actions/Genres'
+import {Route, Switch} from 'react-router-dom'
+import NavBar from '../components/NavBar'
 
 class GenresContainer extends Component {
 
@@ -13,23 +15,24 @@ this.props.fetchGenres()
 
 
 
-  render() {
+render() {
     return (
-      <div>
-        <GenresInput addGenre={this.addGenre}/>
-        </div>
-      //  <Genres
-        //  genres={this.loadGenres}
-      //    deleteGenre={this.deleteGenre}
-      //  />
+        <div>
+          <NavBar/>
+          <Switch>
 
-    );
-  }
+            <Route path='/genres' render={(routerProps) => <Genres {...routerProps} genres={this.props.genres}/>}/>
+          </Switch>
+
+        </div>
+    )
+}
 }
 
-const mapStateToProps = state => ({ genres: state.genres, genre: state.genre })
+
+const mapStateToProps = state => ({ genres: state.genres })
 
 
 
 
-export default connect(mapStateToProps, {fetchAccounts})(GenresContainer)
+export default connect(mapStateToProps, {fetchGenres})(GenresContainer)

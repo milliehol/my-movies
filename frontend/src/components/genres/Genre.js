@@ -2,28 +2,28 @@ import React, { Component, PropTypes } from 'react';
 
 
 
-class GenreItem extends Component {
-
-  constructor(props) {
-  		super(props);
-      }
 
 
-     deleteGenre = (id) => {
-          this.props.deleteGenre(id)
-      }
+  const Genre = (props) => {
 
-      render() {
-          const genre = this.props.genre;
-          return(
-              <li className="genre" key={genre.id} id={genre.id}>
-                  <label className="genreLabel">{genre.name}</label>
-                  <span className="deleteGenreBtn" onClick={(e) => this.deleteGenre(genre.id)}>
-                  x
-                  </span>
-              </li>
-          );
-      }
-  };
+    console.log(props)
+    // let account = props.accounts[props.match.params.id - 1]
+    let genre = props.genres.filter(genre => genre.id == props.match.params.id)[0]
 
-export default GenreItem;
+    console.log(genre)
+    return (
+
+      <div>
+        <h2>
+          {genre.name}
+        </h2>
+
+        <h4>Edit Genre</h4>
+      
+      </div>
+    )
+
+
+  }
+
+export default Genre;

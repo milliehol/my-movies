@@ -1,10 +1,10 @@
-import { LOAD_GENRES_SUCCESS, ADD_GENRE_SUCCESS, DELETE_GENRE_SUCCESS } from '../actions/actionTypes'
 
-function genreReducer(state = [], action)
+
+export default function genreReducer(state = {genres: []}, action)
 {
     switch(action.type) {
-        case LOAD_GENRES_SUCCESS:
-            return action.genres;
+        case FETCH_GENRES:
+            return {genres: action.genres}
 
         case ADD_GENRE_SUCCESS:
             return [
@@ -24,5 +24,3 @@ function genreReducer(state = [], action)
             return state;
     }
 }
-
-export default genreReducer

@@ -1,30 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-import GenreItem from './Genre';
+import {Route, Link} from 'react-router-dom'
+import Genre from './Genre';
 
-class Genres extends Component {
 
-  constructor(props) {
-  		super(props);
-      }
 
-      render() {
-          const genres = this.props.genres;
+  const Genres = (props) => {
 
-         return(
+    return (
+      <div>
+        {props.genres.map(genre =>
+          <li key={genre.id}>
+          {genre.name}
+          </li> )}
+      </div>
 
-             <div className="listWrapper">
-             </div>
-                //  <ul className="genreList">
-                  //{genres.map((genre) => {
-                    //  return (
-                      //    <GenreItem genre={genre} key={genre.id} id={genre.id}
-                        //      deleteGenre={this.props.deleteGenre} />
-                  //    )
-                //  })}
-                //  </ul>
-
-            );
-      }
-  };
+    )
+  }
 
 export default Genres;
