@@ -7,6 +7,7 @@ export function updateGenresSuccess(genre) {
 
 
 export function editGenre(genre) {
+  console.log(genre)
   return function (dispatch) {
     return genresApi.updateGenre(genre).then(responseGenre => {
       dispatch(updateGenresSuccess(responseGenre));

@@ -1,4 +1,4 @@
-export const editAccount = (data) => {
+export const editGenre = (data) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/genres/${data.id}`, {
       headers: {

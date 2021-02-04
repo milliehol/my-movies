@@ -10,10 +10,14 @@ export default function genreReducer(state = {genres: []}, action)
            return {...state, genres: [...state.genres, action.name]}
 
            case 'EDIT_GENRE':
-          return [
-            ...state.filter(genre => genre.id !== action.genre.id),
-            Object.assign({}, action.genre)
-          ]
+      let newGenre = state.genres.map(genre => {
+        if (genre.id === action.genre.id) {
+          return action.genre
+        } else {
+          return genre
+        }
+      })
+      return {...state, genres: newGenre}
 
 
 

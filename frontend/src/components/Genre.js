@@ -20,7 +20,8 @@ import GenreEdit from './GenreEdit'
         </h2>
 
         <h4>Edit Genre</h4>
-         <GenreEdit genre={genre.id}/>
+        console.log(genre)
+         <GenreEdit genre={genre}/>
       </div>
     )
 

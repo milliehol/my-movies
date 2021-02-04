@@ -6,17 +6,21 @@ class GenreEdit extends React.Component {
 
   state = {
     name: '',
+    id: this.props.genre ? this.props.genre.id : null,
   }
 
   handleChange = (event) => {
     this.setState({
+
       [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let genre = {...this.state, id: this.props.genre.id}
+
+   let genre = {...this.state, id: this.state.id}
+
     this.props.editGenre(genre)
     this.setState({
       name: '',
