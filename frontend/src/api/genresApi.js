@@ -1,12 +1,12 @@
 class genresApi {
 
-  //static requestHeaders() {
-  //  return {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
-//  }
+  static requestHeaders() {
+   return {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
+ }
 
   static getAllGenres() {
     const headers = this.requestHeaders();
-    const request = new Request(`http://localhost:3000/genres`, {
+    const request = new Request(`http://localhost:3000/api/v1/genres`, {
       method: 'GET',
       headers: headers
     });

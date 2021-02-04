@@ -16,16 +16,7 @@ export function createGenreSuccess(genre) {
 export function deleteGenreSuccess(genre) {
   return {type: types.DELETE_GENRE_SUCCESS, genre}
 }
-export function fetchGenres() {
-  return (dispatch) => {
-    fetch('http://localhost:3000/genres')
-    .then(resp => resp.json())
-    .then(accounts => dispatch({
-      type: 'FETCH_GENRES',
-      genres: genres
-    }))
-  }
-}
+
 export function updateGenre(genre) {
   return function (dispatch) {
     return genresApi.updateGenre(genre).then(responseGenre => {
