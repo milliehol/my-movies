@@ -19,6 +19,25 @@ export default function genreReducer(state = {genres: []}, action)
       })
       return {...state, genres: newGenre}
 
+      case 'ADD_MOVIE':
+      let movies = state.movies.map(movie => {
+        if (genre.id === action.name.id) {
+          return action.name
+        } else {
+          return genre
+        }
+      })
+      return {...state, genres: genres}
+    case 'DELETE_MOVIE':
+      let newMovie = state.accounts.map(account => {
+        if (account.id === action.payload.id) {
+          return action.paylo
+        } else {
+          return movie
+        }
+      })
+      return {...state, movies: newMovie}
+
 
 
         default:

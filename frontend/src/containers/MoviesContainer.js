@@ -7,8 +7,8 @@ class MoviesContainer extends Component {
   render() {
     return (
       <div>
-          <MovieInput account={this.props.movie}/><br/>
-          <Movies transactions={this.props.genre && this.props.genre.movies}/>
+          <MovieInput genre={this.props.movie}/><br/>
+          <Movies movies={this.props.genre && this.props.genre.movies}/>
       </div>
 
     );
