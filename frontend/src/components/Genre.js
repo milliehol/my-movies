@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {Redirect} from 'react-router-dom'
 import GenreEdit from './GenreEdit'
-
+import MoviesContainer from '../containers/MoviesContainer'
 
 
 
@@ -18,7 +18,7 @@ import GenreEdit from './GenreEdit'
         <h2>
           {genre ? genre.name : null}
         </h2>
-
+        <MoviesContainer genre={genre}/><br/>
         <h4>Edit Genre</h4>
         console.log(genre)
          <GenreEdit genre={genre}/>

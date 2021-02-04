@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MovieInput from '../components/movies/MovieInput'
-import Movies from '../components/movies/Movies'
+import MovieInput from '../components/MovieInput'
+import Movies from '../components/Movies'
 
 
 class MoviesContainer extends Component {
