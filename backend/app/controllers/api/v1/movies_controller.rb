@@ -1,12 +1,21 @@
 class Api::V1::MoviesController < ApplicationController
+
+  before_action :set_account
+
   def index
    @movies = Movie.all
    render json: @movies
  end
 
- def create
-   @movie = Movie.create(movie_params)
+ def show
+   @movie = Movie.find(params[:id])
    render json: @movie
+ end
+
+ def create
+   @movie = @genre.movies.new(movie_params)
+   @movie.save
+   render json: @genre
  end
 
  def destroy
@@ -28,6 +37,10 @@ class Api::V1::MoviesController < ApplicationController
      render json: {errors: @movie.errors.full_messages}, status: 422
    end
  end
+
+ def set_movie
+  @movie = Movie.find(params[:genre_id])
+end
 
  private
  def movie_params
