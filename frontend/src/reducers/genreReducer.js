@@ -1,6 +1,7 @@
+import cuid from 'cuid';
+export const cuidFn = cuid;
 
-
-export default function genreReducer(state = {genres: []}, action)
+export default function genreReducer(state = {genres: [], movies: [],}, action)
 {
     switch(action.type) {
         case 'FETCH_GENRES':
@@ -20,23 +21,15 @@ export default function genreReducer(state = {genres: []}, action)
       return {...state, genres: newGenre}
 
       case 'ADD_MOVIE':
-      let genres = state.genres.map(genre => {
-        if (genre.id === action.name.id) {
-          return action.name
-        } else {
-          return genre
-        }
-      })
-      return {...state, genres: genres}
-    case 'DELETE_MOVIE':
-      let newMovie = state.genres.map(genre => {
-        if (genre.id === action.name.id) {
-          return action.name
-        } else {
-          return genre
-        }
-      })
-      return {...state, movies: newMovie}
+
+         const movie = { title: action.movie.title, genre_Id: action.movie.genre_Id, id: cuidFn() };
+         return { ...state,
+           movies: [...state.movies, movie]
+         }
+
+       case 'DELETE_MOVIE':
+         const movies = state.movies.filter(movie => movie.id !== action.id);
+         return {...state, movies }
 
 
 

@@ -6,6 +6,7 @@ class GenreInput extends React.Component {
 
   state = {
     name: '',
+    
   }
 
   handleChange = (event) => {

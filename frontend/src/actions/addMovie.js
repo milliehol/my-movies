@@ -1,7 +1,7 @@
-export const addMovie = (movie, genreId) => {
+export const addMovie = (movie, genre_Id) => {
 
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/genres/${genreId}/movies`, {
+    fetch(`http://localhost:3000/api/v1/genres/${genre_Id}/movies`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -9,11 +9,11 @@ export const addMovie = (movie, genreId) => {
       body: JSON.stringify(movie)
     })
     .then(response => response.json())
-    .then(genre => {
-        if (genre.error) {
-          alert(genre.error)
+    .then(movie => {
+        if (movie.error) {
+          alert(movie.error)
         } else {
-          dispatch({type: 'ADD_MOVIE', name: genre})
+          dispatch({type: 'ADD_MOVIE', title: movie})
         }
       }
     )
