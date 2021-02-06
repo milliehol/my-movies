@@ -5,8 +5,11 @@ class Api::V1::GenresController < ApplicationController
  end
 
  def show
-   @genre = Genre.find(params[:id])
+  if @genre = Genre.find(params[:id])
    render json: @genre
+ else
+   render json: {errors: @genre.errors.full_messages}, status: 422
+ end
  end
 
 
