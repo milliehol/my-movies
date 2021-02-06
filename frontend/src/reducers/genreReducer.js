@@ -5,15 +5,15 @@ export default function genreReducer(state = {genres: [], movies: [],}, action)
 {
     switch(action.type) {
         case 'FETCH_GENRES':
-            return {genres: action.genres}
+            return {genres: action.payload}
 
             case 'ADD_GENRE':
-           return {...state, genres: [...state.genres, action.name]}
+           return {...state, genres: [...state.genres, action.payload]}
 
            case 'EDIT_GENRE':
       let newGenre = state.genres.map(genre => {
-        if (genre.id === action.genre.id) {
-          return action.genre
+        if (genre.id === action.payload.id) {
+          return action.payload
         } else {
           return genre
         }
@@ -29,15 +29,15 @@ export default function genreReducer(state = {genres: [], movies: [],}, action)
     }
   })
   return {...state, genres: movieDelete}
-case 'EDIT_MOVIE':
-  let editMovie = state.genres.map(genre => {
+case 'ADD_MOVIE':
+  let addMovie = state.genres.map(genre => {
     if (genre.id === action.payload.id) {
-      return genre.payload
+      return action.payload
     } else {
       return genre
     }
   })
-  return {...state, genres: editMovie}
+  return {...state, genres: addMovie}
 
 
 

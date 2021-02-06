@@ -10,13 +10,13 @@ class MovieInput extends React.Component {
 
   handleChange = (event) => {
     this.setState({
-      title: event.target.value
+       [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addMovie({title: this.state.title, genreId: this.props.genreId })
+    this.props.addMovie(this.state, this.props.genre.id)
     this.setState({
       title: ''
     })
@@ -26,7 +26,7 @@ class MovieInput extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Movie Title:</label>
+          <label>Add Movie:</label>
           <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
           <input type="submit"/>
         </form>
@@ -37,4 +37,4 @@ class MovieInput extends React.Component {
 }
 
 
-export default MovieInput;
+export default connect(null, {addMovie})(MovieInput)

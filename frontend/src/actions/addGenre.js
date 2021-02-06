@@ -10,7 +10,7 @@ export const addGenre = (data) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(genre => dispatch({type: 'ADD_GENRE', name: genre}))
+    .then(genre => dispatch({type: 'ADD_GENRE', payload: genre}))
   }
 
 }

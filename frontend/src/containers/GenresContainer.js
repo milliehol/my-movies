@@ -3,7 +3,7 @@ import GenresInput from '../components/GenreInput'
 import Genres from '../components/Genres'
 import Genre from '../components/Genre'
 import { connect } from 'react-redux'
-import { fetchGenres } from '../actions/fetchGenres'
+import { fetchGenres } from '../actions/fetchGenres2'
 import {Route, Switch} from 'react-router-dom'
 import NavBar from '../components/NavBar'
 

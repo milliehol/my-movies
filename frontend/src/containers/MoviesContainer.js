@@ -11,8 +11,9 @@ class MoviesContainer extends Component {
   render() {
     return (
       <div>
+      <Movies movies={this.props.genre.movies}/>
                <MovieInput genre={this.props.genre}/><br/>
-               <Movies movies={this.props.genre && this.props.genre.movies}/>
+
            </div>
     );
   }

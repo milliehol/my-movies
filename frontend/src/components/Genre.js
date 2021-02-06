@@ -18,9 +18,9 @@ import MoviesContainer from '../containers/MoviesContainer'
         <h2>
           {genre ? genre.name : null}
         </h2>
-        <MoviesContainer genre={genre}/><br/>
+        <MoviesContainer genre={genre}/><br/><br/>
         <h4>Edit Genre</h4>
-        console.log(genre)
+
          <GenreEdit genre={genre}/>
       </div>
     )
