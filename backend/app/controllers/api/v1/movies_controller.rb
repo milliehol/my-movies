@@ -1,6 +1,6 @@
 class Api::V1::MoviesController < ApplicationController
 
-  before_action :set_account
+  before_action :set_genre
 
   def index
    @movies = Movie.all
@@ -38,12 +38,12 @@ class Api::V1::MoviesController < ApplicationController
    end
  end
 
- def set_movie
-  @movie = Movie.find(params[:genre_id])
+ def set_genre
+  @genre = Genre.find(params[:genre_id])
 end
 
  private
  def movie_params
-   params.permit(:title, :genre_id, genre_attributes: [:name])
+   params.permit(:title, :genre_id)
  end
 end
