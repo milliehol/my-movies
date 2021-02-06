@@ -13,7 +13,7 @@ export const addMovie = (movie, genre_Id) => {
         if (movie.error) {
           alert(movie.error)
         } else {
-          dispatch({type: 'ADD_MOVIE', title: movie})
+          dispatch({type: 'ADD_MOVIE', payload: movie})
         }
       }
     )

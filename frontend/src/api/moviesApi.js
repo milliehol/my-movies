@@ -1,14 +1,14 @@
 class moviesApi {
 
-  //static requestHeaders() {
-  //  return {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
-//  }
+  static requestHeaders() {
+   return {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
+ }
 
-  static getAllMoves() {
-    //const headers = this.requestHeaders();
-    const request = new Request(`http://localhost:3000/movies`, {
+  static getAllMovies(genreId) {
+    const headers = this.requestHeaders();
+    const request = new Request(`http://localhost:3000/api/v1/genres/${genreId}/movies`, {
       method: 'GET',
-      //headers: headers
+      headers: headers
     });
 
     return fetch(request).then(response => {
@@ -51,7 +51,7 @@ class moviesApi {
   }
 
   static deleteMovie(movie) {
-    //const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+    const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
     const request = new Request(`http://localhost:3000/movies/${movie.id}`, {
       method: 'DELETE',
       headers: headers

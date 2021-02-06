@@ -20,16 +20,41 @@ export default function genreReducer(state = {genres: [], movies: [],}, action)
       })
       return {...state, genres: newGenre}
 
-      case 'ADD_MOVIE':
+      case 'DELETE_MOVIE':
+  let movieDelete = state.genres.map(genre => {
+    if (genre.id === genre.payload.id) {
+      return action.payload
+    } else {
+      return genre
+    }
+  })
+  return {...state, genres: movieDelete}
+case 'EDIT_MOVIE':
+  let editMovie = state.genres.map(genre => {
+    if (genre.id === action.payload.id) {
+      return genre.payload
+    } else {
+      return genre
+    }
+  })
+  return {...state, genres: editMovie}
 
-         const movie = { title: action.movie.title, genre_Id: action.movie.genre_Id, id: cuidFn() };
-         return { ...state,
-           movies: [...state.movies, movie]
-         }
 
-       case 'DELETE_MOVIE':
-         const movies = state.movies.filter(movie => movie.id !== action.id);
-         return {...state, movies }
+
+  //    case 'FETCH_MOVIES':
+    //   return {movies: action.movies}
+
+
+    //  case 'ADD_MOVIE':
+
+    //     const movie = { title: action.movie.title, genreId: action.movie.genre_Id, id: cuidFn() };
+    //     return { ...state,
+    //       movies: [...state.movies, movie]
+    //     }
+
+      //case 'DELETE_MOVIE':
+      //   const movies= state.movies.filter(movie => movie.id !== action.id);
+      //   return {...state, movies }
 
 
 
