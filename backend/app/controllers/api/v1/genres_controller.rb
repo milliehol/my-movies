@@ -4,6 +4,12 @@ class Api::V1::GenresController < ApplicationController
    render json: @genres
  end
 
+ def show
+   @genre = Genre.find(params[:id])
+   render json: @genre
+ end
+
+
  def create
    @genre = Genre.create(genre_params)
    render json: @genre
