@@ -33,6 +33,6 @@ class Api::V1::GenresController < ApplicationController
  private
 
  def genre_params
-   params.require(:genre).permit(:name, moviess_attributes: [:id, :name, :genre_id])
+   params.require(:genre).permit(:name, movies_attributes: [:id, :name, :genre_id])
  end
 end
