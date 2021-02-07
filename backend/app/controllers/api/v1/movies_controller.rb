@@ -3,12 +3,13 @@ class Api::V1::MoviesController < ApplicationController
   before_action :set_genre
 
   def index
-   @movies = Movie.all
+    @movies = @genre.movies
+
    render json: @movies
  end
 
  def show
-   @movie = Movie.find(params[:id])
+   @movie = Movie.find_by_id(params[:id])
    render json: @movie
  end
 
@@ -39,7 +40,7 @@ class Api::V1::MoviesController < ApplicationController
  end
 
  def set_genre
-  @genre = Genre.find(params[:genre_id])
+  @genre = Genre.find_by_id(params[:genre_id])
 end
 
  private

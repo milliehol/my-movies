@@ -5,7 +5,7 @@ class Api::V1::GenresController < ApplicationController
  end
 
  def show
-  if @genre = Genre.find(params[:id])
+  if @genre = Genre.find_by_id(params[:id])
    render json: @genre
  else
    render json: {errors: @genre.errors.full_messages}, status: 422
@@ -33,6 +33,6 @@ class Api::V1::GenresController < ApplicationController
  private
 
  def genre_params
-   params.require(:genre).permit(:name)
+   params.require(:genre).permit(:name, moviess_attributes: [:id, :name, :genre_id])
  end
 end
