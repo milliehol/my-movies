@@ -42,7 +42,7 @@ case 'ADD_MOVIE':
 
 
      case 'FETCH_MOVIES':
-      return {movies: action.movies}
+      return {movies: action.payload}
 
 
     //  case 'ADD_MOVIE':
