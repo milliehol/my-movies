@@ -41,8 +41,8 @@ case 'ADD_MOVIE':
 
 
 
-  //    case 'FETCH_MOVIES':
-    //   return {movies: action.movies}
+     case 'FETCH_MOVIES':
+      return {movies: action.movies}
 
 
     //  case 'ADD_MOVIE':

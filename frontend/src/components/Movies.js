@@ -1,9 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteMovie} from '../actions/deleteMovie'
+import {fetchMovies} from '../actions/fetchMovies2'
 
 
 class Movies extends React.Component {
+
+
+  //componentDidMount() {
+ //this.props.fetchMovies(this.props.genre_id)
+//}
 
 
 
@@ -20,20 +26,24 @@ class Movies extends React.Component {
 
 
   render() {
+
     return (
         <div>
         <h3>
           Movies
         </h3>
 
-          {this.props.movies && this.props.movies.map(movie =>
+          {this.props.movies.map(movie =>
             <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li>
           )}
         </div>
 
       )
-      console.log(movies)
+    
     }
+
+
+
 
   }
 
