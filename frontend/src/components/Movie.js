@@ -4,14 +4,14 @@ class Movie extends Component {
 
 
   handleOnClick = () => {
-    this.props.deleteMovie(this.props.genre.id)
+    this.props.deleteMovie(this.props.movie.id)
   }
 
   render() {
     return (
       <div>
         <li>
-          {this.props.genre.name}
+          {this.props.movie.title}
         </li>
         <button onClick={this.handleOnClick}> x </button>
       </div>

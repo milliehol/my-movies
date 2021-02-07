@@ -12,32 +12,43 @@ import {Route, Switch} from 'react-router-dom'
 class MoviesContainer extends Component {
 
 
-componentDidMount() {
-this.props.fetchMovies(this.props.genre.id)
+
+  componentDidMount() {
+ this.props.fetchMovies(this.props.genre.id)
 }
 
 
-
 render() {
+  console.log(this.props.genre.id)
+  console.log(this.props.genre)
+  console.log(this.props.movies)
   return (
     <div>
-      <MovieInput movie={this.props.movie}/><br/>
-      <Movies movies={this.props.movies}/>
+
+      <MovieInput genre={this.props.genre}/><br/>
+      <Movies movies={this.props.genre.movies}
+      genreId={this.props.genre.id}/>
   </div>
 
   )
+
  }
 }
 
 
 const mapStateToProps = state => {
 return {
-  movies: state.movies
-   }
+ movies: state.movies
   }
+}
+
+const mapDispatchToProps = dispatch => ({
+ fetchGenres: movies => dispatch({type: 'FETCH_MOVIES', movies}),
+  deleteMovie: id => dispatch({type: 'DELETE_MOVIE', id})
+})
 
 
 
 
 
-export default connect(mapStateToProps, {fetchMovies})(MoviesContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesContainer)

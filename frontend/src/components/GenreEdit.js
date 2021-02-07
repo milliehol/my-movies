@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {editGenre} from '../actions/editGenre'
+import { Label, Form } from 'react-bootstrap'
 
 class GenreEdit extends React.Component {
 
@@ -32,7 +33,7 @@ class GenreEdit extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Genre Name: </label>
-          <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
+          <input type='text' placeholder={this.state.name} value={this.state.name} name="name" onChange={this.handleChange}/><br/>
 
           <input type="submit"/>
         </form>

@@ -1,12 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addGenre} from '../actions/addGenre'
+import Form from 'react-bootstrap/Form'
 
 class GenreInput extends React.Component {
 
   state = {
     name: '',
-    
+
   }
 
   handleChange = (event) => {

@@ -41,8 +41,13 @@ case 'ADD_MOVIE':
 
 
 
-     case 'FETCH_MOVIES':
-      return {movies: action.payload}
+     case 'FETCH_MOVIES': return {
+     ...state,
+           genres : {
+               ...state.genres,
+               Movies : state.genres.movies
+           }
+       }
 
 
     //  case 'ADD_MOVIE':

@@ -19,6 +19,9 @@ class GenresContainer extends Component {
 render() {
     return (
         <div className="container">
+        <h2 className="header">
+          My Movies
+        </h2>
           <NavBar/>
           <Switch>
             <Route path='/genres/new' component={GenresInput}/>

@@ -5,21 +5,21 @@ import GenreEdit from './GenreEdit'
 
 
 
-  const Genres = (props) => {
+const Genres = (props) => {
 
-    return (
-      <center><div>
-      <h2>
-        All of the Genres
-      </h2>
+   return (
+     <center><div>
+     <h3>
+       Pick a Genre
+     </h3>
 
-        {props.genres.map(genre =>
-          <li key={genre.id}>
-             <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
-          </li> )}
-      </div></center>
+       {props.genres.map(genre =>
+         <li key={genre.id}>
+            <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
+         </li> )}
+     </div></center>
 
-    )
-  }
+   )
+ }
 
 export default Genres;
