@@ -6,9 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom'
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
+import genreReducer from './reducers/genreReducer'
+import movieReducer from './reducers/movieReducer'
+import thunk from 'redux-thunk'
+import {createStore, applyMiddleware, compose} from 'redux'
+import {combineReducers} from 'redux';
 
+const rootReducer = combineReducers({
+  // short hand property names
+  genreReducer,
+  movieReducer
+});
 
-const store = configureStore();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 ReactDOM.render(

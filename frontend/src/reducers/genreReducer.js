@@ -1,7 +1,8 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
 
-export default function genreReducer(state = {genres: [], movies: [],}, action)
+
+
+
+export default function genreReducer(state = {genres: []}, action)
 {
     switch(action.type) {
         case 'FETCH_GENRES':
@@ -41,13 +42,10 @@ case 'ADD_MOVIE':
 
 
 
-     case 'FETCH_MOVIES': return {
-     ...state,
-           genres : {
-               ...state.genres,
-               Movies : state.genres.movies
-           }
-       }
+
+
+      //return {...state, movies: movieReducer(state.movies, action.payload)}
+
 
 
     //  case 'ADD_MOVIE':

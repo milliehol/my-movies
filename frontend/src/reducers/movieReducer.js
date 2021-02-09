@@ -1,29 +1,27 @@
-import { LOAD_MOVIES, CREATE_MOVIE, DELETE_MOVIE } from '../actions/actionTypes'
 
-function movieReducer(state = [], action)
+
+export default function movieReducer(state = {movies: []}, action)
 {
     switch(action.type) {
-        case LOAD_MOVIES:
-            return action.movies;
+        case 'FETCH_MOVIES':
+            return {movies: action.payload}
 
-        case CREATE_MOVIE:
+        case 'CREATE_MOVIE':
             return [
                 ...state,
                 {
                     id: action.id,
-                    genreId: action.movie.genreId,
+                    genreId: action.movie.genre_Id,
                     title: action.title,
                     done: false
                 }
             ];
 
 
-        case DELETE_MOVIE:
+        case 'DELETE_MOVIE':
             return state.filter(movie => movie.id !== action.index);
 
         default:
             return state;
     }
 }
-
-export default movieReducer

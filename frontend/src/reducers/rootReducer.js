@@ -1,12 +1,13 @@
 import {combineReducers} from 'redux';
-import movies from './movieReducer';
-import genres from './genreReducer';
+import genreReducer from './genreReducer';
+import movieReducer from './movieReducer';
+
 
 
 const rootReducer = combineReducers({
   // short hand property names
-  genres,
-  movies
-})
+  genreReducer,
+  movieReducer
+});
 
 export default rootReducer;

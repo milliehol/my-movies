@@ -10,28 +10,23 @@ class Movies extends React.Component {
 
   render() {
 
-    const { movies, genreId } = this.props;
-    console.log(this.props.movies)
-  //  const associatedMovies = movies.filter(movie => movie.genreId === genreId);
+    const { movies, genreId, deleteMovie } = this.props;
+  //  console.log(this.props.genre.movies)
+   const associatedMovies = this.props.movies.filter(movie => movie.genre_id === genreId);
 
-  //  const movieList = this.props.genre.movies.map((movie, index) => {
-  //    return <Movie key={index} movie={movie}  />
-  //  })
-
-    return (
+   const movieList = associatedMovies.map((movie, index) => {
+     return <Movie key={index} movie={movie} deleteMovie={deleteMovie}   />
+    })
 
 
-     <div>
-       <ul>
-        {this.props.movies.map(movie =>
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-         </li> )}
-
-        </ul>
-      </div>
-    );
-  }
+      return (
+          <div>
+            <ul>
+              {movieList}
+            </ul>
+          </div>
+        );
+      }
 
 };
 

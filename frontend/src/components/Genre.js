@@ -5,27 +5,32 @@ import MoviesContainer from '../containers/MoviesContainer'
 
 
 
-  const Genre = (props) => {
+  class Genre extends React.Component {
 
-    console.log(props)
+  render(){
+     const { genres, movies } = this.props;
 
-    let genre = props.genres.filter(genre => genre.id == props.match.params.id)[0]
+    console.log(this.props)
 
-    console.log(genre)
+    let genre = this.props.genres.filter(genre => genre.id == this.props.match.params.id)[0]
+
+    console.log(this.genre)
     return (
 
       <div>
         <h2>
           {genre ? genre.name : null}
         </h2>
-        <MoviesContainer genre={genre}/><br/><br/>
+        <MoviesContainer genre={genre}
+        movies={movies}/><br/><br/>
         <h4>Edit Genre</h4>
 
          <GenreEdit genre={genre}/>
       </div>
     )
 
-
   }
+
+  };
 
 export default Genre;

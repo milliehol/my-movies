@@ -4,9 +4,9 @@ class moviesApi {
    return {'AUTHORIZATION': `Bearer ${sessionStorage.jwt}`}
  }
 
-  static getAllMovies(genreId) {
+  static getAllMovies() {
     const headers = this.requestHeaders();
-    const request = new Request(`http://localhost:3000/api/v1/genres/${genreId}/movies`, {
+    const request = new Request(`http://localhost:3000/api/v1/genres/3/movies`, {
       method: 'GET',
       headers: headers
     });
