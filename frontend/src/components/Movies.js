@@ -8,26 +8,32 @@ import {fetchMovies} from '../actions/fetchMovies2'
 
 class Movies extends React.Component {
 
+
+  handleDelete = (movie) => {
+    this.props.deleteMovie(movie.id, movie.genre_id)
+  }
+
   render() {
 
     const { movies, genreId, deleteMovie } = this.props;
   //  console.log(this.props.genre.movies)
+
    const associatedMovies = this.props.movies.filter(movie => movie.genre_id === genreId);
 
-   const movieList = associatedMovies.map((movie, index) => {
-     return <Movie key={index} movie={movie} deleteMovie={deleteMovie}   />
-    })
+   const movieList = associatedMovies.map(movie =>
+     <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li>
+      )
 
 
       return (
-          <div>
-            <ul>
+        <center>  <div>
+            
               {movieList}
-            </ul>
-          </div>
+
+          </div> </center>
         );
       }
 
 };
 
-export default Movies;
+export default connect(null, {deleteMovie})(Movies)

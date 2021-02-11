@@ -32,7 +32,7 @@ class GenreEdit extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Genre Name: </label>
+          <label>Name: </label>
           <input type='text' placeholder={this.state.name} value={this.state.name} name="name" onChange={this.handleChange}/><br/>
 
           <input type="submit"/>

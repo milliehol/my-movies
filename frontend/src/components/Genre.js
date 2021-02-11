@@ -23,9 +23,10 @@ import MoviesContainer from '../containers/MoviesContainer'
         </h2>
         <MoviesContainer genre={genre}
         movies={movies}/><br/><br/>
-        <h4>Edit Genre</h4>
+        <h4>Edit Genre Name</h4>
 
          <GenreEdit genre={genre}/>
+         <br/>
       </div>
     )
 

@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {deleteMovie} from '../actions/deleteMovie'
 
 class Movie extends Component {
 
 
   handleOnClick = () => {
-    this.props.deleteMovie(this.props.movie.id)
+    this.props.deleteMovie(this.props.movie.id, this.props.genre.id)
   }
 
   render() {
     return (
-      <div>
+      <center><div>
         <li>
           {this.props.movie.title}
         </li>
         <button onClick={this.handleOnClick}> x </button>
-      </div>
+      </div></center>
     );
   }
 
 };
 
-export default Movie;
+export default connect(null, {deleteMovie})(Movie);

@@ -17,6 +17,7 @@ const Genres = (props) => {
          <li key={genre.id}>
             <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
          </li> )}
+         <br/>
      </div></center>
 
    )

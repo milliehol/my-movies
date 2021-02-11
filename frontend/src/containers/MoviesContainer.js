@@ -18,10 +18,6 @@ class MoviesContainer extends Component {
     }
 
 
-  //componentDidMount() {
-// this.props.fetchMovies(console.log("mounted"))
-//}
-
 
 render() {
   console.log(this.props.genre.name)
@@ -29,11 +25,10 @@ render() {
 //  console.log(this.props.movie.title)
   return (
     <div>
-
-      <MovieInput genre={this.props.genre}/><br/>
       <Movies movies={this.props.movies}
       genreId={this.props.genre.id}
-      deleteMovie={this.props.deleteMovie}/>
+      deleteMovie={this.props.deleteMovie}/><br/>
+      <MovieInput genre={this.props.genre}/><br/>
   </div>
 
   )
@@ -44,14 +39,16 @@ render() {
 
 //const mapStateToProps = state => {
 //return {
- //movies: state.movies
+ //movies: state.movieReducer.movies
 //  }
 //}
 
 const mapDispatchToProps = dispatch => ({
-
+  deleteMovie: () => {
+      dispatch(deleteMovie(this.props.movie.id, this.props.genre.id));
+    },
  //fetchMovies: movies => dispatch({type: 'FETCH_MOVIES', movies}),
-  deleteMovie: id => dispatch({type: 'DELETE_MOVIE', id})
+//  deleteMovie: id => dispatch({type: 'DELETE_MOVIE', id})
 })
 
 

@@ -11,14 +11,16 @@ const Movies = (props) => {
    return (
      <center><div>
      <h3>
-       Pick a Genre
+       The Movies
      </h3>
 
        {props.movies.map(movie =>
          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            <Link to={`genres/${movie.genre_id}/movies/${movie.id}`}>{movie.title}</Link>
          </li> )}
-     </div></center>
+       <br/>
+     </div>
+     </center>
 
    )
  }
