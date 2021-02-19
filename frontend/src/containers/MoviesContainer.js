@@ -17,6 +17,18 @@ class MoviesContainer extends Component {
       };
     }
 
+    afterDeleteMovie = (movieID) => {
+
+  // state, before delete anything
+  const currentMovies = this.state.movies;
+
+  // Remove deleted item from state.
+  this.setState({
+    movies: currentMovies.filter(movie => movie.id !== movieID),
+  });
+  window.location.reload(false);
+
+}
 
 
 render() {
@@ -29,6 +41,11 @@ render() {
       genreId={this.props.genre.id}
       deleteMovie={this.props.deleteMovie}/><br/>
       <MovieInput genre={this.props.genre}/><br/>
+      <Switch>
+        <Route path='/movies/new' render={(routerProps) => <MovieInput {...routerProps} genre={this.props.genre}/>}/>
+          <Route path='/movies/' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies} genreId={this.props.genre.id}/>}/>
+        <Route path='/movies/:id' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies} genreId={this.props.genre.id}/>}/>
+      </Switch>
   </div>
 
   )

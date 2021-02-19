@@ -21,13 +21,14 @@ class Movies extends React.Component {
    const associatedMovies = this.props.movies.filter(movie => movie.genre_id === genreId);
 
    const movieList = associatedMovies.map(movie =>
-     <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li>
+      <li key={movie.id}>   {movie.title}</li>
+  //   <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li>
       )
 
 
       return (
         <center>  <div>
-            
+
               {movieList}
 
           </div> </center>

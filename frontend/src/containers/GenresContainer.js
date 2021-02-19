@@ -28,6 +28,7 @@ this.props.fetchMovies(console.log(this.props.movies))
 
 
 
+
 render() {
     return (
         <div className="container">
@@ -41,6 +42,7 @@ render() {
             <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres} movies={this.props.movies}/>}/>
             <Route path='/genres' render={(routerProps) => <Genres {...routerProps} genres={this.props.genres}/>}/>
             <Route path='/movies' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies}/>}/>
+            <Route path='/movies/' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies}/>}/>
           </Switch>
 
         </div>

@@ -21,16 +21,16 @@ export default function genreReducer(state = {genres: []}, action)
       })
       return {...state, genres: newGenre}
 
-      case 'DELETE_MOVIE':
-  let movieDelete = state.genres.map(genre => {
-    if (genre.id === action.payload.id) {
-      return action.payload
-    } else {
-      return genre
-    }
-  })
-  return {...state, genres: movieDelete}
-case 'ADD_MOVIE':
+//      case 'DELETE_MOVIE':
+//  let movieDelete = state.genres.map(genre => {
+//    if (genre.id === action.payload.id) {
+//      return action.payload
+//    } else {
+//      return genre
+//    }
+//  })
+//  return {...state, genres: movieDelete}
+case 'NEW_MOVIE':
   let addMovie = state.genres.map(genre => {
     if (genre.id === action.payload.id) {
       return action.payload
@@ -39,6 +39,8 @@ case 'ADD_MOVIE':
     }
   })
   return {...state, genres: addMovie}
+
+
 
 
 

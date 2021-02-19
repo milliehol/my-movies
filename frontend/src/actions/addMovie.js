@@ -9,11 +9,11 @@ export const addMovie = (movie, genre_Id) => {
       body: JSON.stringify(movie)
     })
     .then(response => response.json())
-    .then(genre => {
-        if (genre.error) {
-          alert(genre.error)
+    .then(movie => {
+        if (movie.error) {
+          alert(movie.error)
         } else {
-          dispatch({type: 'ADD_MOVIE', payload: genre})
+          dispatch({type: 'ADD_MOVIE', payload: movie})
         }
       }
     )

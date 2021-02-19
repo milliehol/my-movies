@@ -9,7 +9,7 @@ export const editGenre = (data) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(account => dispatch({type: 'EDIT_GENRE', name: genre}))
+    .then(genre => dispatch({type: 'EDIT_GENRE', payload: genre}))
   }
 
 }

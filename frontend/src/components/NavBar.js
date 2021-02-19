@@ -7,9 +7,10 @@ const NavBar = (props) => {
 
   return (
   <center>  <div className="nav">
-      <Link to='/genres' style={{paddingRight: '10px'}} className="nav-link">Genres  </Link>
-      <Link to='/movies' style={{paddingRight: '10px'}} className="nav-link">Movies  </Link>
+      <Link to='/genres' style={{paddingRight: '10px'}} className="nav-link">Genres </Link>
+
       <Link to='/genres/new' className="nav-link"> Add Genre</Link>
+      <Link to='/movies' style={{paddingRight: '10px'}} className="nav-link">  Movies  </Link>
 
 
     </div> </center>

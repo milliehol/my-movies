@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {editGenre} from '../actions/editGenre'
+import {editGenre} from '../actions/editGenre2'
 import { Label, Form } from 'react-bootstrap'
 
 class GenreEdit extends React.Component {
