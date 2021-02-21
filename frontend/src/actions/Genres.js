@@ -17,6 +17,19 @@ export function deleteGenreSuccess(genre) {
   return {type: types.DELETE_GENRE_SUCCESS, genre}
 }
 
+
+export function fetchGenres() {
+  // make async call to api, handle promise, dispatch action when promise is resolved
+  return function(dispatch) {
+    return genresApi.getAllGenres().then(genres => {
+      dispatch(loadGenresSuccess(genres));
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}
+
+
 export function updateGenre(genre) {
   return function (dispatch) {
     return genresApi.updateGenre(genre).then(responseGenre => {

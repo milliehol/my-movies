@@ -12,16 +12,16 @@ import NavBar from '../components/NavBar'
 
 class GenresContainer extends Component {
 
-  constructor(props) {
-      super(props);
-      this.state = {
-      };
-    }
+//  constructor(props) {
+//      super(props);
+//      this.state = {
+//      };
+//    }
 
 
   componentDidMount() {
 this.props.fetchGenres(console.log(this.props))
-this.props.fetchMovies(console.log(this.props.movies))
+//this.props.fetchMovies(console.log(this.props.movies))
 
 }
 
@@ -39,10 +39,9 @@ render() {
           <NavBar/>
           <Switch>
             <Route path='/genres/new' component={GenresInput}/>
-            <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres} movies={this.props.movies}/>}/>
+            <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres} />}/>
             <Route path='/genres' render={(routerProps) => <Genres {...routerProps} genres={this.props.genres}/>}/>
             <Route path='/movies' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies}/>}/>
-            <Route path='/movies/' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies}/>}/>
           </Switch>
 
         </div>

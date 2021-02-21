@@ -36,7 +36,7 @@ export default function movieReducer(state = {movies: []}, action)
         case 'DELETE_MOVIE':
                 //return {...state, movies: [...state.movies, action.payload]}
 
-           return {movies: state.movies.filter(movie => movie !== action.payload)}
+           return {movies: state.movies.filter(movie => movie.id !== action.payload)}
 
            //return state.filter(movie => movie.id !== action.index);
 

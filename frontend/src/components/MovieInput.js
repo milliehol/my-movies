@@ -6,7 +6,7 @@ class MovieInput extends React.Component {
 
   state = {
     title: '',
-    id: this.props.movie ? this.props.movie.id : null,
+  //  id: this.props.movie ? this.props.movie.id : null,
   }
 
   handleChange = (event) => {

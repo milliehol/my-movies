@@ -14,17 +14,9 @@ class Movies extends Component  {
 
 
   handleDelete = (movie) => {
-    const movieDelete = movie
     this.props.deleteMovie(movie.id, movie.genre_id)
-
-
-    // Remove deleted item from state.
-  //  this.setState({
-//  movies: this.state.movies.filter(movie => movie.id !== movieDelete.id),
-//    });
-
-//reloads window after movie is removed
-    window.location.reload(false);
+    //relaods after movie deleted
+   window.location.reload(false);
   }
 
 render() {
@@ -44,6 +36,7 @@ render() {
         // </li>
          <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li> )}
        <br/>
+
      </div>
      </center>
 
