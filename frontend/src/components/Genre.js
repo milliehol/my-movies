@@ -8,7 +8,7 @@ import MoviesContainer from '../containers/MoviesContainer'
   class Genre extends React.Component {
 
   render(){
-     const { genres } = this.props;
+     const { genres, movies } = this.props;
 
     //console.log(this.props)
 
@@ -22,7 +22,7 @@ import MoviesContainer from '../containers/MoviesContainer'
           {genre ? genre.name : null}
         </h2>
         <MoviesContainer genre={genre}
-      //  movies={movies}
+       movies={movies}
       /><br/><br/>
         <h4>Edit Genre Name</h4>
 

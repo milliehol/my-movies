@@ -1,6 +1,6 @@
 
 
-
+//reducer accepts the state and an action
 
 
 export default function movieReducer(state = {movies: []}, action)
@@ -21,6 +21,7 @@ export default function movieReducer(state = {movies: []}, action)
             ];
 
             case 'ADD_MOVIE':
+            //returns all movies in current state, then adds new movie
             return {...state, movies: [...state.movies, action.payload]}
 
           //  case 'DELETE_COMMENT_REQUEST':
@@ -33,12 +34,13 @@ export default function movieReducer(state = {movies: []}, action)
   //       });
 
 
-        case 'DELETE_MOVIE':
+       case 'DELETE_MOVIE':
                 //return {...state, movies: [...state.movies, action.payload]}
 
-           return {movies: state.movies.filter(movie => movie.id !== action.payload)}
+          //filters through array and deletes correct movie
+          return {movies: state.movies.filter(movie => movie.id !== action.payload.id)}
 
-           //return state.filter(movie => movie.id !== action.index);
+        //   return state.filter(movie => movie.id !== action.payload.id);
 
         default:
             return state;

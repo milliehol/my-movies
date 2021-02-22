@@ -1,18 +1,10 @@
-import * as types from './actionTypes';
-import genresApi from '../api/genresApi';
-
-export function loadGenresSuccess(genres) {
-  return {type: 'FETCH_GENRES', genres};
-}
-
-
 export function fetchGenres() {
-  // make async call to api, handle promise, dispatch action when promise is resolved
-  return function(dispatch) {
-    return genresApi.getAllGenres().then(genres => {
-      dispatch(loadGenresSuccess(genres));
-    }).catch(error => {
-      throw(error);
-    });
-  };
+  return (dispatch) => {
+    fetch('http://localhost:3000/api/v1/genres')
+    .then(resp => resp.json()) //converted to json
+    .then(genres => dispatch({
+      type: 'FETCH_GENRES',
+      payload: genres
+    }))
+  }
 }

@@ -16,7 +16,7 @@ class Movies extends Component  {
   handleDelete = (movie) => {
     this.props.deleteMovie(movie.id, movie.genre_id)
     //relaods after movie deleted
-   window.location.reload(false);
+  // window.location.reload(false);
   }
 
 render() {
@@ -31,10 +31,11 @@ render() {
      </h3>
 
        {this.props.movies.map(movie =>
-        // <li key={movie.id}>
-          //  <Link to={`genres/${movie.genre_id}/movies/${movie.id}`}>{movie.title}</Link>
-        // </li>
-         <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li> )}
+         <li key={movie.id}>
+            <Link to={`genres/${movie.genre_id}/movies/${movie.id}`}>{movie.title}</Link>
+         </li>
+        // <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li>
+      )}
        <br/>
 
      </div>

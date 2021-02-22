@@ -23,16 +23,17 @@ render() {
 //  console.log(this.props.movie.title)
   return (
     <div>
-      <Movies movies={this.props.genre.movies}
+      <Movies movies={this.props.movies}
       genreId={this.props.genre.id}
-      deleteMovie={this.props.deleteMovie}/><br/>
+    //  deleteMovie={this.props.deleteMovie}
+      /><br/>
       <MovieInput genre={this.props.genre}/><br/>
       {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
       <Switch>
-        <Route path='/movies/new' render={(routerProps) => <MovieInput {...routerProps} genre={this.props.genre}/>}/>
-          <Route path='/movies/' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies} genreId={this.props.genre.id}/>}/>
-        <Route path='/movies/:id' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies} genreId={this.props.genre.id}/>}/>
+      //  <Route path='/movies/new' render={(routerProps) => <MovieInput {...routerProps} genre={this.props.genre}/>}/>
+      //    <Route path='/movies/:id' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies} genreId={this.props.genre.id}/>}/>
+      //  <Route path='/movies/:id' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies} genreId={this.props.genre.id}/>}/>
       </Switch>
   </div>
 
@@ -44,8 +45,8 @@ render() {
 
 //const mapStateToProps = state => {
 //return {
- //movies: state.movieReducer.movies
-//  }
+// movies: state.movieReducer.movies
+// }
 //}
 
 //const mapDispatchToProps = dispatch => ({
