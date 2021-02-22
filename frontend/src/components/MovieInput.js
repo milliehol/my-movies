@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addMovie} from '../actions/addMovie'
+import { Navbar, Nav, Form, Button } from 'react-bootstrap';
 
 class MovieInput extends React.Component {
 
@@ -27,7 +28,7 @@ class MovieInput extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="Form" onSubmit={this.handleSubmit}>
           <label>Add Movie:</label>
           <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
           <input type="submit"/>

@@ -5,7 +5,6 @@ import Movie from '../components/Movie'
 import { connect } from 'react-redux'
 import {addMovie} from '../actions/addMovie'
 import {deleteMovie} from '../actions/deleteMovie'
-import {fetchMovies} from '../actions/fetchMovies2'
 import {Route, Switch} from 'react-router-dom'
 
 

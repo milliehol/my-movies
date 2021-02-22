@@ -31,8 +31,8 @@ class GenreEdit extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Name: </label>
+        <form className="Form" onSubmit={this.handleSubmit}>
+          <label className="Label">Name: </label>
           <input type='text' placeholder={this.state.name} value={this.state.name} name="name" onChange={this.handleChange}/><br/>
 
           <input type="submit"/>

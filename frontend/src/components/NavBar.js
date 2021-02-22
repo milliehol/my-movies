@@ -6,7 +6,7 @@ import { Navbar, Nav, Form, Button } from 'react-bootstrap';
 const NavBar = (props) => {
 
   return (
-  <center>  <div className="nav">
+  <center>  <div className="Navbar">
       <Link to='/genres' style={{paddingRight: '10px'}} className="nav-link">Genres </Link>
 
       <Link to='/genres/new' className="nav-link"> Add Genre</Link>
