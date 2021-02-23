@@ -4,15 +4,16 @@ import GenreEdit from './GenreEdit'
 import MoviesContainer from '../containers/MoviesContainer'
 
 
+//need to pass in props
+  const Genre = (props) => {
 
-  class Genre extends React.Component {
 
-  render(){
-     const { genres, movies } = this.props;
+    // const { genres, movies } = this.props;
 
     //console.log(this.props)
 
-    let genre = this.props.genres.filter(genre => genre.id == this.props.match.params.id)[0]
+    let genre = props.genres.filter(genre => genre.id == props.match.params.id)[0]
+    let movies = props.movies
 
   //  console.log(this.genre)
     return (
@@ -22,7 +23,7 @@ import MoviesContainer from '../containers/MoviesContainer'
           {genre ? genre.name : null}
         </h2>
         <MoviesContainer genre={genre}
-       movies={movies}
+      movies={movies}
       /><br/><br/>
         <h4>Edit Genre Name</h4>
 
@@ -31,7 +32,7 @@ import MoviesContainer from '../containers/MoviesContainer'
       </div>
     )
 
-  }
+
 
   };
 

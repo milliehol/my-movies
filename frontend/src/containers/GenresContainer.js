@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GenresInput from '../components/GenreInput'
 import Genres from '../components/Genres'
+import Movie from '../components/Movie'
 import Movies from '../components/Movies2'
 import Genre from '../components/Genre'
 import { connect } from 'react-redux'
@@ -12,11 +13,7 @@ import NavBar from '../components/NavBar'
 
 class GenresContainer extends Component {
 
-//  constructor(props) {
-//      super(props);
-//      this.state = {
-//      };
-//    }
+//container passes props to components for data manipulation
 
 
   componentDidMount() {
@@ -37,12 +34,14 @@ render() {
           My Movies
         </h2>
           <NavBar/>
+          {/* A <Switch> looks through its children <Route>s and
+               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path='/genres/new/' component={GenresInput}/>
-            <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres} movies={this.props.movies} />}/>
+           <Route path='/genres/new' component={GenresInput}/>
+           <Route path='/genres/:id' render={(routerProps) => <Genre {...routerProps} genres={this.props.genres} movies={this.props.movies} />}/>
             <Route path='/genres' render={(routerProps) => <Genres {...routerProps} genres={this.props.genres}/>}/>
+            <Route path='/movies/:id' render={(routerProps) => <Movie {...routerProps} movies={this.props.movies} genres={this.props.genres}/>}/>
             <Route path='/movies/' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies}/>}/>
-          //  <Route path='/movies/:id' render={(routerProps) => <Movies {...routerProps} movies={this.props.movies}/>}/>
           </Switch>
 
         </div>
@@ -50,7 +49,7 @@ render() {
 }
 }
 
-
+//takes in the state from redux store
 const mapStateToProps = state => {
   return {
     genres: state.genreReducer.genres,
@@ -71,5 +70,5 @@ const mapDispatchToProps = dispatch => ({
 
 
 
-
+//renders to app component
 export default connect(mapStateToProps, mapDispatchToProps)(GenresContainer)

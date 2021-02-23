@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {addGenre} from '../actions/addGenre'
 import Form from 'react-bootstrap/Form'
 
+//class component, needs this
 class GenreInput extends React.Component {
 
   state = {

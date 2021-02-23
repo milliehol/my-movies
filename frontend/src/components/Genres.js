@@ -4,7 +4,7 @@ import Genre from './Genre';
 import GenreEdit from './GenreEdit'
 
 
-
+//functional, not class component, receives entire props object
 const Genres = (props) => {
 
    return (

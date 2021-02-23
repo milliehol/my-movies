@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteMovie} from '../actions/deleteMovie'
 
-class Movie extends Component {
+const Movie = (props) => {
 
 
-  handleOnClick = () => {
-    this.props.deleteMovie(this.props.movie.id, this.props.genre.id)
-  }
+  // const { genres, movies } = this.props;
 
-  render() {
-    return (
-      <center><div>
-        <li>
-          {this.props.movie.title}
-        </li>
-        <button onClick={this.handleOnClick}> x </button>
-      </div></center>
-    );
-  }
+  //console.log(this.props)
+  let movie = props.movies.filter(movie => movie.id == props.match.params.id)[0]
+  let genre = props.genres.filter(genre => genre.id == movie.genre_id)[0]
+
+
+//  console.log(this.genre)
+  return (
+
+    <div>
+    <h2>
+      {movie ? movie.title : null}
+    </h2>
+      <h3>
+        Genre: {genre ? genre.name : null}
+      </h3>
+
+       <br/>
+    </div>
+  )
+
+
 
 };
 
-export default connect(null, {deleteMovie})(Movie);
+export default Movie;

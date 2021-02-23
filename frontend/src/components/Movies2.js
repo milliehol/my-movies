@@ -3,23 +3,22 @@ import {Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteMovie} from '../actions/deleteMovie'
 import Genre from './Genre';
-import GenreEdit from './GenreEdit'
 
 
 
 
-class Movies extends Component  {
+
+const Movies = (props) => {
 
 
 
 
-  handleDelete = (movie) => {
-    this.props.deleteMovie(movie.id, movie.genre_id)
+//  handleDelete = (movie) => {
+  //  this.props.deleteMovie(movie.id, movie.genre_id)
     //relaods after movie deleted
   // window.location.reload(false);
-  }
-
-render() {
+//  }
+    let movies = props.movies
 
    return (
 
@@ -30,9 +29,9 @@ render() {
        The Movies
      </h3>
 
-       {this.props.movies.map(movie =>
+       {movies.map(movie =>
          <li key={movie.id}>
-            <Link to={`genres/${movie.genre_id}/movies/${movie.id}`}>{movie.title}</Link>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
          </li>
         // <li key={movie.id}>{movie.title} <button onClick={() => this.handleDelete(movie)}>Delete</button></li>
       )}
@@ -42,7 +41,7 @@ render() {
      </center>
 
    )
- }
+
 };
 
 
@@ -51,4 +50,4 @@ render() {
 
 //});
 
-export default connect(null, {deleteMovie})(Movies);
+export default Movies;

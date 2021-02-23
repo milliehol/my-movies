@@ -47,7 +47,7 @@
 }
 
 .nav-link:hover {
-   color:red;
+   color:purple;
    text-decoration:none;
    cursor:pointer;
    background-color: tan;

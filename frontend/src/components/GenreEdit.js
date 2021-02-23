@@ -7,7 +7,7 @@ class GenreEdit extends React.Component {
 
   state = {
     name: '',
-    id: this.props.genre ? this.props.genre.id : null,
+    id: this.props.genre.id
   }
 
   handleChange = (event) => {
@@ -29,11 +29,12 @@ class GenreEdit extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <form className="Form" onSubmit={this.handleSubmit}>
           <label className="Label">Name: </label>
-          <input type='text' placeholder={this.state.name} value={this.state.name} name="name" onChange={this.handleChange}/><br/>
+          <input type='text' placeholder="update genre name" value={this.state.name} name="name" onChange={this.handleChange}/><br/>
 
           <input type="submit"/>
         </form>
@@ -42,9 +43,9 @@ class GenreEdit extends React.Component {
   }
 }
 
-GenreEdit.defaultProps = {
-  genres: {}
-}
+//GenreEdit.defaultProps = {
+//  genres: {}
+//}
 
 
 export default connect(null, {editGenre})(GenreEdit)
