@@ -1,26 +1,31 @@
 class Api::V1::MoviesController < ApplicationController
 
-  before_action :set_genre
+ before_action :set_genre
 
   def index
-    @movies = @genre.movies
-
-   render json: @movies
+    @movies = Movie.all
+    render json: @movies
  end
 
  def show
-   @movie = Movie.find_by_id(params[:id])
+   @movie = Movie.find(params[:id])
    render json: @movie
  end
 
  def create
    @movie = @genre.movies.new(movie_params)
-   @movie.save
-   render json: @genre
+
+  if  @movie.save
+   render json: @movie
+ else
+   render json: {errors: @movie.errors.full_messages}, status: 422
+ end
+
  end
 
  def destroy
-   @movie = Movie.find_by_id(params[:id])
+   @movie = Movie.find(params[:id])
+  #  @genre = Genre.find(@movie.genre_id)
    if @movie.destroy
      render json: @movie
    else

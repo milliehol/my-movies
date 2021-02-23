@@ -1,11 +1,12 @@
 class Api::V1::GenresController < ApplicationController
    def index
    @genres = Genre.all
-   render json: @genres
+    #includes nested movies
+   render json: @genres, include: [:movies]
  end
 
  def show
-  if @genre = Genre.find_by_id(params[:id])
+  if @genre = Genre.find(params[:id])
    render json: @genre
  else
    render json: {errors: @genre.errors.full_messages}, status: 422
@@ -14,8 +15,11 @@ class Api::V1::GenresController < ApplicationController
 
 
  def create
-   @genre = Genre.create(genre_params)
+  if @genre = Genre.create(genre_params)
    render json: @genre
+  else
+   render json: {errors: @genre.errors.full_messages}, status: 422
+  end
  end
 
  def update
@@ -33,6 +37,6 @@ class Api::V1::GenresController < ApplicationController
  private
 
  def genre_params
-   params.require(:genre).permit(:name, movies_attributes: [:id, :name, :genre_id])
+   params.require(:genre).permit(:name)
  end
 end

@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   namespace :api do
    namespace :v1 do
       resources :movies
+      #nested route for movies
      resources :genres do
-         resources :movies
+       resources :movies
      end
+
    end
  end
 
