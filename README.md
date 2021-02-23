@@ -12,10 +12,9 @@ Built using create-react-app
 Execute
 
 $ npm install
-And when finished
 
 $ npm start
-It should open automatically at localhost:3000
+
 
 
 # Built With
