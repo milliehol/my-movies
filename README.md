@@ -1,4 +1,4 @@
-# my-movies
+# My Movies
 
 Website for the storing movie information, using React.js, Redux and Ruby on Rails. 
 
